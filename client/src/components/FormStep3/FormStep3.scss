@@ -1,0 +1,69 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+.container {
+  @include container;
+}
+.form-step3 {
+  @include form;
+}
+
+.form__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  margin: 20px 0;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: all 0.2s;
+}
+.form__slider:hover {
+  opacity: 1;
+}
+.form__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: $primary-color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form-step3__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-step3__button {
+  @include button-style;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $background-shadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background: $background-color;
+  box-shadow: 5px 5px 15px $background-shadow;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal__button {
+  @include button-style;
+  margin-top: 10px;
+  width: 100%;
+}

@@ -1,0 +1,126 @@
+@use 'sass:color';
+@use './variables' as *;
+
+@mixin container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+@mixin form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: color.adjust($background-color, $lightness: 5%);
+  border-radius: 20px;
+  box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+@mixin input-style {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: $input-bg;
+  border: 1px solid $input-border-color;
+  border-radius: 6px;
+  color: $text-color;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $input-focus-color;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+}
+
+@mixin button-style {
+  padding: 15px;
+  background-color: $button-bg;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:disabled {
+    background-color: $button-disabled;
+    cursor: not-allowed;
+  }
+}
+
+@mixin floating-label {
+  // решил взять прикольный лэйбл из интернетов, в итоге пожалел  :(
+  position: relative;
+  padding: 15px 0 0;
+  width: 100%;
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $input-border-color;
+    outline: 0;
+    font-size: 1.2rem;
+    color: $text-color;
+    padding: 20px 0;
+    background: transparent;
+    transition: all 0.4s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &::selection {
+      background-color: $primary-hover;
+    }
+
+    &:placeholder-shown ~ .form__label {
+      font-size: 1.2rem;
+      cursor: text;
+      top: 20px;
+    }
+
+    &:focus {
+      border-bottom: 3px solid $primary-color;
+      ~ .form__label {
+        top: 0;
+        font-size: 1rem;
+        color: $primary-color;
+      }
+    }
+    &:hover {
+      border-bottom: 3px solid $primary-color;
+      ~ .form__label {
+        top: 0;
+        font-size: 1rem;
+        color: $primary-color;
+      }
+    }
+    & option {
+      background-color: rgb(45, 45, 45);
+      color: $text-color;
+      border-radius: 50%;
+
+    }
+  }
+
+  .form__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    color: $placeholder-color;
+    transition: 0.3s;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  @include container;
+}
+.form-step1 {
+  @include form;
+}
+
+.form-step1__input {
+  @include input-style;
+}
+
+.form-step1__select {
+  @include input-style;
+  cursor: pointer;
+  color: $placeholder-color;
+}
+
+.form-step1__select:focus {
+  color: $text-color;
+}
+.form-step1__error {
+  position: absolute;
+  color: rgba(207, 50, 50, 1);
+  bottom: 35px;
+  left: 40px;
+  font-size: 0.8rem;
+}
+.form-step1__button {
+  @include button-style;
+  width: 150px;
+  align-self: flex-end;
+}

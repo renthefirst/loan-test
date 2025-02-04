@@ -1,0 +1,24 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  @include container;
+}
+.form-step2 {
+  @include form;
+}
+
+.form__group {
+  @include floating-label;
+}
+
+.form-step2__buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: end;
+}
+
+.form-step2__button {
+  @include button-style;
+}
