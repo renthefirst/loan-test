@@ -7,8 +7,9 @@
 - На задание ушло примерно 3 часа с перерывами на чаёк
 
 #### Запуск:
-1. npm install
-2. npm run dev
+1. cd client
+2. npm install
+3. npm run dev
 
 
 
